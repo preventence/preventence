@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* equals ~80px */
+}
