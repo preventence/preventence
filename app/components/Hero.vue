@@ -20,16 +20,16 @@
     ></div>
 
     <div
-      class="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#011B31] to-transparent z-0 opacity-50"
+      class="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-[#011B31] to-transparent z-0 opacity-50"
     ></div>
     <div
-      class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#011B31] to-transparent z-0 opacity-50"
+      class="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#011B31] to-transparent z-0 opacity-50"
     ></div>
 
     <div
       class="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10"
     >
-      <div class="max-w-xl text-center lg:text-left">
+      <div class="text-center lg:text-left">
         <span
           class="inline-flex items-center bg-blue-500/20 text-blue-300 border border-blue-500/50 px-4 py-2 rounded-full text-xs uppercase tracking-widest font-semibold mb-5 animate-fade-in-up"
           style="animation-delay: 0.1s"
@@ -38,7 +38,7 @@
           Preventive Maintenance Reimagined
         </span>
 
-        <h1
+        <!-- <h1
           class="text-5xl md:text-6xl font-extrabold leading-tight mb-5 animate-fade-in-up"
           style="animation-delay: 0.2s"
         >
@@ -48,7 +48,26 @@
           >
             Maximize Reliability
           </span>
-        </h1>
+        </h1> -->
+
+        <div class="text-center md:text-left">
+          <h1
+            class="text-5xl md:text-6xl font-extrabold leading-tight mb-5 animate-fade-in-up"
+            style="animation-delay: 0.2s"
+          >
+            <span class="inline">Minimize Downtime,</span><br/>
+            <span
+              class="inline text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-200"
+            >
+              Maximize Reliability
+            </span>
+          </h1>
+        </div>
+
+
+        <!-- <div data-aos="fade-up" data-aos-delay="200">
+          <h1 class="text-5xl font-bold mb-4">Minimize Downtime, Maximize Reliability</h1>
+        </div> -->
 
         <p
           class="text-lg text-blue-200 mb-8 leading-relaxed animate-fade-in-up"

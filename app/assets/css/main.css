@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Your custom CSS below if needed */
+
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem; /* equals ~80px */

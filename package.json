@@ -12,6 +12,10 @@
   "dependencies": {
     "@nuxt/scripts": "^0.11.13",
     "@nuxt/ui": "^3.3.2",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/google-gtag": "^1.0.4",
+    "@nuxtjs/robots": "^5.5.6",
+    "@nuxtjs/sitemap": "^7.4.7",
     "@unhead/vue": "^2.0.14",
     "lucide-vue-next": "^0.542.0",
     "nuxt": "^4.0.3",
