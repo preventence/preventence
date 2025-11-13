@@ -7,7 +7,6 @@
     <section
       class="bg-gradient-to-br from-[#07416B] via-[#1297E0] to-[#07416B] text-white py-20 relative overflow-hidden">
 
-      <!-- Soft glow pattern -->
       <div
         class="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_top_left,#ffffff_10%,transparent_60%)]">
       </div>
@@ -29,7 +28,6 @@
     <section class="py-16">
       <div class="container mx-auto px-6 md:px-12">
 
-        <!-- Filter section -->
         <FeatureFilter
           :categories="categories"
           :activeCategory="activeCategory"
@@ -38,30 +36,28 @@
           @update:search="val => search = val"
         />
 
-        <!-- Category Headers -->
         <div v-if="!search && !activeCategory" class="mt-10 mb-6">
           <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
             All Features ({{ filteredFeatures.length }})
           </h2>
         </div>
 
-        <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <AnimatedSection
             v-for="(f, i) in filteredFeatures"
             :key="f.title"
-            :delay="i * 35"
+            :delay="i * 50"
           >
             <FeatureCard
               :icon="f.icon"
               :title="f.title"
               :desc="f.desc"
               :items="f.items"
+              :theme="f.theme"
             />
           </AnimatedSection>
         </div>
 
-        <!-- Empty State -->
         <div v-if="filteredFeatures.length === 0"
              class="text-center py-20 text-slate-500 text-lg">
           No matching features found. Try a different keyword or filter.
@@ -72,9 +68,6 @@
 </template>
 
 <script setup>
-/* ==========================
-Imports
-=========================== */
 import { ref, computed } from 'vue'
 import { useHead } from '#imports'
 
@@ -107,7 +100,7 @@ import {
 } from 'lucide-vue-next'
 
 /* ======================================
-SEO (Title + OG + Twitter + JSON-LD)
+SEO (kept + enhanced)
 ====================================== */
 useHead({
   title: "Preventence Features — Complete Maintenance Intelligence",
@@ -115,17 +108,23 @@ useHead({
     {
       name: "description",
       content:
-        "Explore all Preventence features: work orders, preventive maintenance, asset tracking, inventory, checklists, analytics, dashboards, ERP/SAP integrations, and automation."
+        "Explore all Preventence features: work orders, preventive maintenance, asset tracking, inventory, checklists, analytics, dashboards, ERP/SAP integrations, automation and more."
+    },
+    { name: "keywords",
+      content: "preventive maintenance software, cmms features, work order management, asset management, inventory, dashboards, analytics, ERP integration, SAP integration, smart scheduling"
     },
     { property: "og:title", content: "Preventence — Full Feature Suite" },
-    { property: "og:description", content: "Enterprise-grade preventive maintenance platform with 20+ advanced modules." },
+    { property: "og:description", content: "Advanced preventive maintenance platform with 20+ powerful features." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://preventence.com/features" },
     { property: "og:image", content: "/og-banner.png" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "Preventence Features" },
-    { name: "twitter:description", content: "Explore 20+ maintenance, asset, analytics and automation features." },
+    { name: "twitter:description", content: "Explore maintenance, asset, analytics and automation features." },
     { name: "twitter:image", content: "/og-banner.png" }
+  ],
+  link: [
+    { rel: "canonical", href: "https://preventence.com/features" }
   ],
   script: [
     {
@@ -160,167 +159,201 @@ useHead({
 })
 
 /* ======================================
-DATA
+State
 ====================================== */
 const search = ref('')
 const activeCategory = ref('')
 
+/* ======================================
+FEATURE DATA — WITH THEME COLORS
+====================================== */
 const allFeatures = [
-  /* Maintenance Automation */
+
+  // =====================
+  // MAINTENANCE AUTOMATION (BLUE)
+  // =====================
   {
     title: 'Work Order Management',
-    desc: 'Plan, assign, execute and track work orders with precision and full audit visibility.',
+    desc: 'Plan, assign and track work orders with full audit visibility.',
     category: 'Maintenance Automation',
     icon: ClipboardList,
-    items: [
-      'Priority + SLA',
-      'Technician assignment',
-      'Photos & attachments'
-    ]
+    items: ['Priority + SLA', 'Photos & attachments', 'Technician logs'],
+    theme: 'blue'
   },
   {
     title: 'Preventive Maintenance',
-    desc: 'Automated recurring schedules that extend equipment life and reduce downtime.',
+    desc: 'Recurring schedules to extend asset life and reduce failures.',
     category: 'Maintenance Automation',
     icon: CalendarCheck,
-    items: ['Recurring rules', 'Templates', 'Part allocation']
+    items: ['PM cycles', 'Templates', 'Parts allocation'],
+    theme: 'blue'
   },
   {
     title: 'Ad-hoc Maintenance',
-    desc: 'Capture and resolve breakdowns instantly with fast-dispatch workflows.',
+    desc: 'Instant breakdown logging and technician dispatch.',
     category: 'Maintenance Automation',
     icon: AlertCircle,
-    items: ['Quick create', 'Breakdown logs', 'Immediate notifications']
+    items: ['Breakdown logs', 'Fast assignment', 'Immediate alerts'],
+    theme: 'blue'
   },
   {
     title: 'Maintenance Checklists',
-    desc: 'Digital SOP checklists that ensure consistent execution every time.',
+    desc: 'Digital SOPs + multi-field checkpoints for consistent workflows.',
     category: 'Maintenance Automation',
     icon: List,
-    items: ['Checkpoints', 'Mandatory steps', 'Half-save']
+    items: ['Validations', 'Half-save', 'Flexible field types'],
+    theme: 'blue'
   },
   {
     title: 'Checkpoint & Checklist Grouping',
-    desc: 'Create deep multi-level groups for organized and scalable maintenance plans.',
+    desc: 'Organize checkpoints → checklists → checklist groups.',
     category: 'Maintenance Automation',
     icon: Layers,
-    items: ['Grouping', 'Templates', 'Mapping']
+    items: ['Hierarchy', 'Templates', 'Reuse'],
+    theme: 'blue'
   },
   {
     title: 'Who Did What (Audit)',
-    desc: 'Every action logged with name, time and context for full accountability.',
+    desc: 'Every action logged with name, timestamp and signature.',
     category: 'Maintenance Automation',
     icon: UserCheck,
-    items: ['Action logs', 'Timestamps', 'Compliance history']
+    items: ['Timestamps', 'User history', 'Compliance logs'],
+    theme: 'blue'
   },
   {
     title: 'Digital SOPs',
-    desc: 'Rich SOP documentation linked directly to execution checklists.',
+    desc: 'Versioned SOPs linked directly to execution steps.',
     category: 'Maintenance Automation',
     icon: File,
-    items: ['Versioning', 'Mandatory SOPs', 'Linked tasks']
+    items: ['Versions', 'Mandatory SOPs', 'Linked tasks'],
+    theme: 'blue'
   },
 
-  /* Asset + Resource Management */
+  // =============================
+  // ASSET & RESOURCE MANAGEMENT (GREEN)
+  // =============================
   {
     title: 'Asset Management',
-    desc: 'Track specs, hierarchy, locations and lifecycle history effortlessly.',
+    desc: 'Track asset specs, hierarchy, location and lifecycle data.',
     category: 'Asset & Resource Management',
     icon: Factory,
-    items: ['Hierarchy', 'Custom fields', 'Tags']
+    items: ['Location tree', 'Custom tags', 'Lifecycle logs'],
+    theme: 'green'
   },
   {
     title: 'Inventory & Parts Management',
-    desc: 'Real-time part stock, reorders and consumption analysis.',
+    desc: 'Manage spare parts, consumption and stock levels.',
     category: 'Asset & Resource Management',
     icon: Box,
-    items: ['Stock levels', 'Reorder rules', 'Consumption logs']
+    items: ['Stock tracking', 'Reorder rules', 'Consumption history'],
+    theme: 'green'
   },
   {
     title: 'User & Role Management',
-    desc: 'Teams, roles and structured access control for each module.',
+    desc: 'Manage users, teams and granular permissions.',
     category: 'Asset & Resource Management',
     icon: Users,
-    items: ['Role-based access', 'Teams', 'Permissions']
+    items: ['Roles', 'Teams', 'Module access'],
+    theme: 'green'
   },
   {
     title: 'Role-Based Access',
-    desc: 'Control who can perform what with precise granular permissions.',
+    desc: 'Fine-grained control over every module and function.',
     category: 'Asset & Resource Management',
     icon: Shield,
-    items: ['RBAC', 'Rule builder', 'Scoped permissions']
+    items: ['RBAC', 'Supervisor rules', 'Permission matrix'],
+    theme: 'green'
   },
   {
     title: 'Expiration & Warranty Alerts',
-    desc: 'Automatic reminders for warranty expiries, calibrations and certificates.',
+    desc: 'Get alerts for warranties, calibrations and certificates.',
     category: 'Asset & Resource Management',
     icon: Bell,
-    items: ['Expiry reminders', 'Batch alerts', 'Summary lists']
+    items: ['Reminders', 'Calendar view', 'Batch alerts'],
+    theme: 'green'
   },
   {
     title: 'Historical Records',
-    desc: 'View every maintenance event in a timeline for compliance and RCA.',
+    desc: 'Complete searchable maintenance timeline per asset.',
     category: 'Asset & Resource Management',
     icon: Clock,
-    items: ['Event timeline', 'Root cause', 'Exportable']
+    items: ['Event timeline', 'Exports', 'RCA'],
+    theme: 'green'
   },
 
-  /* Analytics & Visibility */
+  // =============================
+  // ANALYTICS & VISIBILITY (AMBER)
+  // =============================
   {
     title: 'Maintenance Dashboards',
-    desc: 'Executive dashboards for uptime, OEE, MTTR and performance KPIs.',
+    desc: 'KPI dashboards for OEE, MTTR, uptime and performance.',
     category: 'Analytics & Visibility',
     icon: BarChart2,
-    items: ['KPI widgets', 'Custom dashboards', 'Filters']
+    items: ['OEE', 'Uptime', 'Performance widgets'],
+    theme: 'amber'
   },
   {
     title: 'Live Dashboards',
-    desc: 'Instant visibility into active tasks, failures and machine state.',
+    desc: 'Real-time visibility into machines, tasks and alerts.',
     category: 'Analytics & Visibility',
     icon: Monitor,
-    items: ['Live feed', 'Alerts', 'Machine status']
+    items: ['Live feed', 'Running tasks', 'Active failures'],
+    theme: 'amber'
   },
   {
     title: 'Live Analytics',
-    desc: 'Trend analysis and anomaly insights powered by historical + live data.',
+    desc: 'Trend, anomaly and predictive insight analysis.',
     category: 'Analytics & Visibility',
     icon: Activity,
-    items: ['Predictive patterns', 'Trend graphs', 'Anomalies']
+    items: ['Trends', 'Anomalies', 'Prediction'],
+    theme: 'amber'
   },
   {
     title: 'Reports & Exports',
-    desc: 'Audit-ready report packs, scheduled emails and export formats.',
+    desc: 'Customizable reports, export formats and scheduled emails.',
     category: 'Analytics & Visibility',
     icon: FileText,
-    items: ['PDF/CSV', 'Scheduled reports', 'Compliance packs']
+    items: ['PDF/CSV', 'Scheduled reports', 'Compliance packs'],
+    theme: 'amber'
   },
 
-  /* Integrations & Intelligence */
+  // =============================
+  // INTEGRATIONS & INTELLIGENCE (PURPLE)
+  // =============================
   {
     title: 'ERP Integration',
-    desc: 'Sync financials, inventory and work orders directly with ERP platforms.',
+    desc: 'Sync financials, materials & work orders with ERP platforms.',
     category: 'Integrations & Intelligence',
     icon: Cloud,
-    items: ['Two-way sync', 'Cost tracking', 'Material movement']
+    items: ['BOM sync', 'Cost sync', 'Work order exchange'],
+    theme: 'purple'
   },
   {
     title: 'SAP Integration',
-    desc: 'SAP ECC + S/4HANA prebuilt connectors for deep operational sync.',
+    desc: 'Ready connectors for SAP ECC + S/4HANA.',
     category: 'Integrations & Intelligence',
     icon: Zap,
-    items: ['MM sync', 'Work order push', 'Status sync']
+    items: ['MM sync', 'Work order push', 'Status updates'],
+    theme: 'purple'
   },
   {
     title: 'Smart Scheduling',
-    desc: 'AI-assisted scheduling ensuring right technician + right time.',
+    desc: 'AI-assisted scheduling for optimal technician allocation.',
     category: 'Integrations & Intelligence',
     icon: Calendar,
-    items: ['Skill routing', 'Constraints', 'Auto-schedule']
+    items: ['Skill matching', 'Constraints', 'Auto-reschedule'],
+    theme: 'purple'
   }
 ]
 
+/* ======================================
+CATEGORY LIST
+====================================== */
 const categories = Array.from(new Set(allFeatures.map(f => f.category)))
 
+/* ======================================
+FILTER LOGIC
+====================================== */
 const filteredFeatures = computed(() => {
   const q = search.value.trim().toLowerCase()
   return allFeatures.filter(f => {
@@ -334,12 +367,3 @@ const filteredFeatures = computed(() => {
   })
 })
 </script>
-
-<style scoped>
-/* Smooth fade animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: all 0.4s ease-out;
-}
-</style>

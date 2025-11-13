@@ -1,89 +1,112 @@
 <template>
-  <section id="features" class="py-24 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-[#07416B] mb-6">
-          Complete Maintenance Management
-        </h2>
-        <p class="text-lg md:text-xl text-gray-600">
-          Preventence brings everything you need to streamline preventive maintenance — 
-          from intelligent scheduling to real-time asset insights.
-        </p>
-      </div>
-
-      <!-- Feature Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        <div
-          v-for="(feature, index) in features"
-          :key="index"
-          class="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
-        >
-          <div
-            class="w-16 h-16 bg-gradient-to-br from-[#1297E0] to-[#07416B] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
-          >
-            <component :is="feature.icon" class="w-8 h-8 text-white" />
-          </div>
-
-          <h3 class="text-2xl font-bold text-[#07416B] mb-3">{{ feature.title }}</h3>
-          <p class="text-gray-600 mb-4">{{ feature.description }}</p>
-
-          <ul class="text-sm text-gray-500 space-y-2">
-            <li v-for="(point, i) in feature.points" :key="i">
-              • {{ point }}
-            </li>
-          </ul>
+  <section id="features" class="py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-12">
+      <AnimatedSection>
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Powerful Maintenance Capabilities</h2>
+          <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+            A complete suite to manage assets, automate maintenance, and deliver measurable uptime improvements.
+          </p>
         </div>
-      </div>
+      </AnimatedSection>
+
+      <!-- Core -->
+      <AnimatedSection>
+        <h3 class="text-2xl font-bold text-[#07416B] mb-6 border-l-4 border-[#1297E0] pl-3">Core Maintenance</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <FeatureCard v-for="(f,i) in core" :key="f.title" :icon="f.icon" :title="f.title" :desc="f.desc" :delay="i*80" />
+        </div>
+      </AnimatedSection>
+
+      <!-- Asset & Resource -->
+      <AnimatedSection>
+        <h3 class="text-2xl font-bold text-[#07416B] mb-6 border-l-4 border-[#1297E0] pl-3">Asset & Resource Management</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <FeatureCard v-for="(f,i) in asset" :key="f.title" :icon="f.icon" :title="f.title" :desc="f.desc" :delay="i*80" />
+        </div>
+      </AnimatedSection>
+
+      <!-- Analytics -->
+      <AnimatedSection>
+        <h3 class="text-2xl font-bold text-[#07416B] mb-6 border-l-4 border-[#1297E0] pl-3">Analytics & Dashboards</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <FeatureCard v-for="(f,i) in analytics" :key="f.title" :icon="f.icon" :title="f.title" :desc="f.desc" :delay="i*80" />
+        </div>
+      </AnimatedSection>
+
+      <!-- Integrations -->
+      <AnimatedSection>
+        <h3 class="text-2xl font-bold text-[#07416B] mb-6 border-l-4 border-[#1297E0] pl-3">Integrations & Automation</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard v-for="(f,i) in integrations" :key="f.title" :icon="f.icon" :title="f.title" :desc="f.desc" :delay="i*80" />
+        </div>
+      </AnimatedSection>
     </div>
   </section>
 </template>
 
 <script setup>
-import { Calendar, Activity, ClipboardCheck, Warehouse, Users, Package } from 'lucide-vue-next'
+/* Imports - pick icons from lucide-vue-next */
+import AnimatedSection from '~/components/AnimatedSection.vue'
+import FeatureCard from '~/components/FeatureCard.vue'
 
-const features = [
-  {
-    title: 'Smart Scheduling',
-    description: 'Automate preventive maintenance planning with intelligent scheduling and technician optimization.',
-    points: ['Auto-generate work orders', 'Assign by skill and availability', 'Reduce human scheduling errors'],
-    icon: Calendar,
-  },
-  {
-    title: 'Live Analytics',
-    description: 'Monitor OEE, downtime, and task completion in real time through interactive dashboards.',
-    points: ['Real-time KPI dashboards', 'Downtime root cause analysis', 'Performance trends'],
-    icon: Activity,
-  },
-  {
-    title: 'Digital SOPs',
-    description: 'Standardize procedures with interactive checklists, SOP documents, and compliance tracking.',
-    points: ['Custom checklists', 'Photo & note capture', 'Audit compliance reports'],
-    icon: ClipboardCheck,
-  },
-  {
-    title: 'Asset Intelligence',
-    description: 'Centralized asset management with machine history, version control, and lifecycle analytics.',
-    points: ['Machine history & logs', 'Version tracking', 'Health scoring'],
-    icon: Warehouse,
-  },
-  {
-    title: 'Role-Based Access',
-    description: 'Give Admins, Supervisors, and Technicians proper permissions to maintain workflow control.',
-    points: ['Granular permissions', 'Department access limits', 'User activity logs'],
-    icon: Users,
-  },
-  {
-    title: 'Smart Inventory',
-    description: 'Track spare parts, modules, and components linked with machine IDs for effortless inventory visibility.',
-    points: ['Parts version control', 'Low-stock alerts', 'Auto-linking with assets'],
-    icon: Package,
-  },
+import {
+  ClipboardList,
+  CalendarCheck,
+  AlertCircle,
+  List,
+  Layers,
+  UserCheck,
+  Clock,
+  Factory,
+  Box,
+  Users,
+  Shield,
+  Bell,
+  BarChart2,
+  Monitor,
+  Activity,
+  FileText,
+  Cloud,
+  Zap,
+  Calendar,
+  File
+} from 'lucide-vue-next'
+
+/* Feature arrays with icon components */
+const core = [
+  { icon: ClipboardList, title: 'Work Order Management', desc: 'Create, assign and monitor work orders with status, priorities and attachments.' },
+  { icon: CalendarCheck, title: 'Preventive Maintenance', desc: 'Schedule recurring plans and automations to reduce failures and increase uptime.' },
+  { icon: AlertCircle, title: 'Ad-hoc Maintenance', desc: 'Log unplanned breakdowns quickly and dispatch teams with full context.' },
+  { icon: List, title: 'Maintenance Checklists', desc: 'Standardized digital checklists and SOPs to ensure consistent work quality.' },
+  { icon: Layers, title: 'Checkpoint & Checklist Grouping', desc: 'Organize checkpoints into checklists and group related checklists for SOP clarity.' },
+  { icon: UserCheck, title: 'Who Did What', desc: 'Complete audit trail to see who performed each step and when.' },
+  { icon: Clock, title: 'Historical Records', desc: 'Searchable maintenance history for analytics, audits and root-cause analysis.' },
+]
+
+const asset = [
+  { icon: Factory, title: 'Asset Management', desc: 'Single source of truth for assets: hierarchy, location, specs and lifecycle.' },
+  { icon: Box, title: 'Inventory & Parts', desc: 'Track spare parts, stock levels and consumption with reorder alerts.' },
+  { icon: Users, title: 'User & Role Management', desc: 'Manage users, teams and department-level access with ease.' },
+  { icon: Shield, title: 'Role-Based Access', desc: 'Fine-grained permissions to control who can view and edit critical data.' },
+  { icon: Bell, title: 'Expiration & Warranty Alerts', desc: 'Automated reminders for warranties, certificates and expiring items.' },
+]
+
+const analytics = [
+  { icon: BarChart2, title: 'Maintenance Dashboards', desc: 'Executive dashboards with KPIs like OEE, MTTR and uptime.' },
+  { icon: Monitor, title: 'Live Dashboards', desc: 'Real-time machine and task monitoring for operational teams.' },
+  { icon: Activity, title: 'Live Analytics', desc: 'Streaming and historical analytics to identify failure patterns.' },
+  { icon: FileText, title: 'Reports & Exports', desc: 'Generate custom reports for audits, management and compliance.' },
+]
+
+const integrations = [
+  { icon: Cloud, title: 'ERP Integration', desc: 'Bi-directional sync with ERPs for parts, costs and resource planning.' },
+  { icon: Zap, title: 'SAP Integration', desc: 'Pre-built SAP connectors to unify maintenance and enterprise data.' },
+  { icon: Calendar, title: 'Smart Scheduling', desc: 'Constraint-aware scheduling that optimizes availability and reduces downtime.' },
+  { icon: File, title: 'Digital SOPs', desc: 'Built-in digital SOP authoring and enforcement inside checklists.' },
 ]
 </script>
 
 <style scoped>
-section {
-  scroll-margin-top: 5rem; /* offset for sticky header */
-}
+/* Scoped tweaks if needed */
 </style>

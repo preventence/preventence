@@ -3,7 +3,29 @@
     <Hero @openDemo="openDemo = true" />
 
     <!-- Features -->
-    <Features />
+    <!-- <Features /> -->
+      <section class="py-20 -mt-10 relative z-10">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">Designed for modern maintenance teams</h2>
+          <p class="text-slate-600 max-w-3xl mx-auto mt-3">Comprehensive capabilities grouped into four pillars — clear, powerful, and easy to adopt.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <AnimatedSection v-for="(p, i) in pillars" :key="p.title">
+            <FeaturePillar
+              :icon="p.icon"
+              :title="p.title"
+              :desc="p.desc"
+              :bullets="p.bullets"
+              :delay="i*80"
+              fromColor="#1297E0"
+              toColor="#07416B"
+            />
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
     <!-- <section id="features" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-bold text-[#07416B] mb-6">Powerful features</h2>
@@ -62,10 +84,104 @@
 <script setup>
 import Hero from '~/components/Hero.vue'
 import Features from '~/components/Features.vue'
+import AnimatedSection from '~/components/AnimatedSection.vue'
+import FeaturePillar from '~/components/FeaturePillar.vue'
 import Industries from '~/components/Industries.vue'
 import ROICalculator from '~/components/ROICalculator.vue'
 import FooterCTA from '~/components/FooterCTA.vue'
+import { Settings, Factory, BarChart2, Cloud } from 'lucide-vue-next'
 import { ref } from 'vue'
+import { useHead } from '#imports'
 
 const openDemo = ref(false)
+
+useHead({
+  title: "Preventence — Modern Maintenance Management Software",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Preventence is a modern maintenance management software that helps industrial teams automate workflows, track assets in real time, and extend equipment life with intelligent scheduling and analytics."
+    },
+    {
+      name: "keywords",
+      content:
+        "maintenance management software, CMMS, preventive maintenance, asset tracking, industrial maintenance, downtime reduction, maintenance automation, maintenance analytics"
+    },
+
+    // OpenGraph
+    { property: "og:title", content: "Preventence — Modern Maintenance Management Software" },
+    {
+      property: "og:description",
+      content:
+        "Automate maintenance workflows, track assets in real time, and improve equipment reliability with Preventence."
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://preventence.com/" },
+    { property: "og:image", content: "/og-banner.png" },
+
+    // Twitter
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Preventence — Maintenance Software" },
+    {
+      name: "twitter:description",
+      content:
+        "Preventence helps industrial teams reduce downtime and extend asset life with automation, tracking, and analytics."
+    },
+    { name: "twitter:image", content: "/og-banner.png" },
+  ],
+
+  link: [
+    { rel: "canonical", href: "https://preventence.com/" }
+  ],
+
+  script: [
+    {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Preventence",
+        applicationCategory: "Industrial Maintenance Software",
+        offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+        description:
+          "Preventence is a modern maintenance management software that automates workflows, tracks assets in real time, and improves equipment reliability with intelligent scheduling and analytics.",
+        url: "https://preventence.com/",
+        image: "https://preventence.com/og-banner.png",
+        creator: {
+          "@type": "Organization",
+          name: "Preventence",
+          url: "https://preventence.com"
+        }
+      })
+    }
+  ]
+})
+
+const pillars = [
+  {
+    icon: Settings,
+    title: 'Maintenance Automation',
+    desc: 'Automate work orders, schedules, and checklists to prevent breakdowns before they occur.',
+    bullets: ['Work orders & priorities', 'Recurring preventive plans', 'Digital checklists & SOPs']
+  },
+  {
+    icon: Factory,
+    title: 'Asset & Inventory',
+    desc: 'Keep a single source of truth for assets and spare parts with lifecycle and stock controls.',
+    bullets: ['Asset registry & hierarchy', 'Parts & inventory', 'Expiration & warranty alerts']
+  },
+  {
+    icon: BarChart2,
+    title: 'Analytics & Insights',
+    desc: 'Live dashboards and historical reports to help you reduce MTTR and increase OEE.',
+    bullets: ['Live dashboards', 'Custom reports', 'Historical trends']
+  },
+  {
+    icon: Cloud,
+    title: 'Integrations & Scheduling',
+    desc: 'Connect to ERPs and SAP, and use smart scheduling to optimize resources.',
+    bullets: ['ERP / SAP integrations', 'Smart scheduling', 'APIs & webhooks']
+  },
+]
 </script>

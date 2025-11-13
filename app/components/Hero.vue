@@ -73,9 +73,10 @@
           class="text-lg text-blue-200 mb-8 leading-relaxed animate-fade-in-up"
           style="animation-delay: 0.3s"
         >
-          Preventence empowers industrial teams to automate maintenance
+          Preventence is a modern maintenance management software that empowers industrial teams to automate workflows, track assets in real time, and extend equipment life with intelligent scheduling and analytics.
+          <!-- Preventence empowers industrial teams to automate maintenance
           workflows, track assets in real-time, and extend equipment life through
-          intelligent scheduling and analytics.
+          intelligent scheduling and analytics. -->
         </p>
 
         <div

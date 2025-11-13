@@ -13,7 +13,8 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#features" class="text-gray-600 hover:text-[#1297E0] transition-colors">Features</a>
+          <!-- <a href="#features" class="text-gray-600 hover:text-[#1297E0] transition-colors">Features</a> -->
+          <NuxtLink to="/features" class="text-gray-600 hover:text-[#1297E0] transition-colors">Features</NuxtLink>
           <a href="#how-it-works" class="text-gray-600 hover:text-[#1297E0] transition-colors">How It Works</a>
           <a href="#industries" class="text-gray-600 hover:text-[#1297E0] transition-colors">Industries</a>
           <a href="#roi" class="text-gray-600 hover:text-[#1297E0] transition-colors">ROI Calculator</a>
