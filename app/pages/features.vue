@@ -46,7 +46,7 @@
           <AnimatedSection
             v-for="(f, i) in filteredFeatures"
             :key="f.title"
-            :delay="i * 50"
+            :delay="i * 20"
           >
             <FeatureCard
               :icon="f.icon"
@@ -177,7 +177,11 @@ const allFeatures = [
     desc: 'Plan, assign and track work orders with full audit visibility.',
     category: 'Maintenance Automation',
     icon: ClipboardList,
-    items: ['Priority + SLA', 'Photos & attachments', 'Technician logs'],
+    items: [
+      'Priority + SLA', 
+      // 'Photos & attachments', 
+      'Technician logs'
+    ],
     theme: 'blue'
   },
   {

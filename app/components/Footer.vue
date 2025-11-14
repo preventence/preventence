@@ -6,7 +6,7 @@
         <!-- Logo & About -->
         <div>
           <div class="flex items-center gap-3 mb-4">
-            <img src="/preventence-logo.png" alt="Preventence Logo" class="h-10 w-auto" />
+            <img src="/Preventence-Transparent-logo.png" alt="Preventence Logo" class="h-10 w-auto" />
             <h3 class="text-xl font-bold">Preventence</h3>
           </div>
           <p class="text-sm text-[#07416B]/80 leading-relaxed">
@@ -19,10 +19,10 @@
         <div>
           <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#features" class="hover:text-[#1297E0] transition">Features</a></li>
-            <li><a href="#industries" class="hover:text-[#1297E0] transition">Industries</a></li>
-            <li><a href="#roi" class="hover:text-[#1297E0] transition">ROI Calculator</a></li>
-            <li><a href="#cta" class="hover:text-[#1297E0] transition">Get Started</a></li>
+            <li><NuxtLink to="/features" class="hover:text-[#1297E0] transition">Features</NuxtLink></li>
+            <li><a href="/#industries" class="hover:text-[#1297E0] transition">Industries</a></li>
+            <li><a href="/#roi" class="hover:text-[#1297E0] transition">ROI Calculator</a></li>
+            <li><a href="/#cta" class="hover:text-[#1297E0] transition">Get Started</a></li>
           </ul>
         </div>
 
@@ -30,9 +30,9 @@
         <div>
           <h4 class="font-semibold text-lg mb-4">Company</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#about" class="hover:text-[#1297E0] transition">About Us</a></li>
-            <li><a href="#blog" class="hover:text-[#1297E0] transition">Blog</a></li>
-            <li><a href="#contact" class="hover:text-[#1297E0] transition">Contact</a></li>
+            <li><a href="/#about" class="hover:text-[#1297E0] transition">About Us</a></li>
+            <li><a href="/#blog" class="hover:text-[#1297E0] transition">Blog</a></li>
+            <li><a href="/#contact" class="hover:text-[#1297E0] transition">Contact</a></li>
             <li><a href="https://preventence-app-delta.vercel.app/" target="_blank" class="hover:text-[#1297E0] transition">Login</a></li>
           </ul>
         </div>
@@ -75,9 +75,9 @@
         <p>© 2025 Preventence. All rights reserved.</p>
         <div class="flex gap-6 mt-4 md:mt-0">
           <!-- <a href="/privacy" class="hover:text-[#1297E0]">Privacy Policy</a> -->
-          <a href="#" class="hover:text-[#1297E0]">Privacy Policy</a>
+          <a href="/#" class="hover:text-[#1297E0]">Privacy Policy</a>
           <!-- <a href="/terms" class="hover:text-[#1297E0]">Terms of Service</a> -->
-          <a href="#" class="hover:text-[#1297E0]">Terms of Service</a>
+          <a href="/#" class="hover:text-[#1297E0]">Terms of Service</a>
         </div>
       </div>
     </div>

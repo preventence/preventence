@@ -25,12 +25,12 @@
         >
           Book a Demo
         </button>
-        <a
-          href="#features"
+        <NuxtLink
+          to="/features"
           class="border-2 border-white/80 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
         >
           Explore Features
-        </a>
+        </NuxtLink>
       </div>
     </div>
 

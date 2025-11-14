@@ -106,7 +106,7 @@ useHead({
     {
       name: "keywords",
       content:
-        "maintenance management software, CMMS, preventive maintenance, asset tracking, industrial maintenance, downtime reduction, maintenance automation, maintenance analytics"
+        "maintenance management software, CMMS, preventive maintenance, asset tracking, industrial maintenance, downtime reduction, maintenance automation, maintenance analytics, preventence technology private limited"
     },
 
     // OpenGraph

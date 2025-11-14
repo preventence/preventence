@@ -2,7 +2,7 @@
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur border-b z-50">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 h-16">
             <div class="flex items-center gap-2">
-                <img src="/Preventence_Transparent_logo1.png" alt="Preventence" class="h-10 w-auto" />
+                <img src="/Preventence-Transparent-logo.png" alt="Preventence" class="h-10 w-auto" />
                 <span class="font-extrabold text-[#07416B] text-lg md:text-xl">Preventence</span>
             </div>
 

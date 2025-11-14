@@ -15,13 +15,13 @@
         <div class="hidden md:flex items-center space-x-8">
           <!-- <a href="#features" class="text-gray-600 hover:text-[#1297E0] transition-colors">Features</a> -->
           <NuxtLink to="/features" class="text-gray-600 hover:text-[#1297E0] transition-colors">Features</NuxtLink>
-          <a href="#how-it-works" class="text-gray-600 hover:text-[#1297E0] transition-colors">How It Works</a>
-          <a href="#industries" class="text-gray-600 hover:text-[#1297E0] transition-colors">Industries</a>
-          <a href="#roi" class="text-gray-600 hover:text-[#1297E0] transition-colors">ROI Calculator</a>
-          <a href="#pricing" class="text-gray-600 hover:text-[#1297E0] transition-colors">Pricing</a>
-          <a href="#about" class="text-gray-600 hover:text-[#1297E0] transition-colors">About</a>
-          <a href="#blog" class="text-gray-600 hover:text-[#1297E0] transition-colors">Blog</a>
-          <a href="#contact" class="text-gray-600 hover:text-[#1297E0] transition-colors">Contact</a>
+          <a href="/#how-it-works" class="text-gray-600 hover:text-[#1297E0] transition-colors">How It Works</a>
+          <a href="/#industries" class="text-gray-600 hover:text-[#1297E0] transition-colors">Industries</a>
+          <a href="/#roi" class="text-gray-600 hover:text-[#1297E0] transition-colors">ROI Calculator</a>
+          <a href="/#pricing" class="text-gray-600 hover:text-[#1297E0] transition-colors">Pricing</a>
+          <a href="/#about" class="text-gray-600 hover:text-[#1297E0] transition-colors">About</a>
+          <a href="/#blog" class="text-gray-600 hover:text-[#1297E0] transition-colors">Blog</a>
+          <a href="/#contact" class="text-gray-600 hover:text-[#1297E0] transition-colors">Contact</a>
         </div>
         
         <!-- CTA Buttons -->
@@ -48,14 +48,15 @@
       <!-- Mobile Menu -->
       <div v-if="mobileMenuOpen" class="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
         <div class="flex flex-col space-y-3">
-          <a href="#features" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Features</a>
-          <a href="#how-it-works" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">How It Works</a>
-          <a href="#industries" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Industries</a>
-          <a href="#roi" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">ROI Calculator</a>
-          <a href="#pricing" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Pricing</a>
-          <a href="#about" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">About</a>
-          <a href="#blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</a>
-          <a href="#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a>
+          <NuxtLink to="/features" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Features</NuxtLink>
+          <!-- <a href="#features" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Features</a> -->
+          <a href="/#how-it-works" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">How It Works</a>
+          <a href="/#industries" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Industries</a>
+          <a href="/#roi" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">ROI Calculator</a>
+          <a href="/#pricing" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Pricing</a>
+          <a href="/#about" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">About</a>
+          <a href="/#blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</a>
+          <a href="/#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a>
 
           <div class="flex flex-col space-y-2 pt-2">
             <NuxtLink href="https://preventence-app-delta.vercel.app/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] font-medium text-left">
