@@ -62,6 +62,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/Preventence-Transparent-logo.png' },
         { rel: 'canonical', href: 'https://preventence.com' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/preventence-touch-icon.png' // Create this separate file!
+        }
       ],
     }
   }
