@@ -220,6 +220,19 @@ const stats = reactive({
   monitoring: { target: '24/7', value: '0' },
 });
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Preventence Technology Private Limited", 
+  "alternateName": "Preventence", 
+  "url": "https://preventence.com", 
+  "logo": "/Preventence-Transparent-logo.png", 
+  "sameAs": [
+    "https://twitter.com/preventence", 
+    "https://www.linkedin.com/company/preventence-technology-private-limited/"
+  ],
+};
+
 useHead({
   title: 'Preventence CMMS: Minimize Downtime & Maximize Reliability',
   meta: [
@@ -266,18 +279,6 @@ useHead({
   ]
 });
 
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Preventence Technology Private Limited", 
-  "alternateName": "Preventence", 
-  "url": "https://preventence.com", 
-  "logo": "/Preventence-Transparent-logo.png", 
-  "sameAs": [
-    "https://twitter.com/preventence", 
-    "https://www.linkedin.com/company/preventence-technology-private-limited/"
-  ],
-};
 
 // --- Counting Animation Logic ---
 const runCounter = (key) => {
