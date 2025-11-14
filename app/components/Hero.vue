@@ -209,6 +209,7 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
+import { useHead } from '#imports'
 
 // Reactive refs for statistics
 const statsContainer = ref(null);
@@ -218,6 +219,65 @@ const stats = reactive({
   cost: { target: 30, value: 0, formatter: (val) => Math.round(val) },
   monitoring: { target: '24/7', value: '0' },
 });
+
+useHead({
+  title: 'Preventence CMMS: Minimize Downtime & Maximize Reliability',
+  meta: [
+    { 
+      name: 'description', 
+      content: 'Preventence is a modern maintenance management software (CMMS) that empowers industrial teams to automate workflows, track assets, and boost uptime to 99.9%.' 
+    },
+    // Open Graph (OG) tags for social media sharing
+    { 
+      property: 'og:title', 
+      content: 'Preventence CMMS: Minimize Downtime & Maximize Reliability' 
+    },
+    { 
+      property: 'og:description', 
+      content: 'Preventence is a modern maintenance management software (CMMS) that empowers industrial teams to automate workflows, track assets, and boost uptime to 99.9%.' 
+    },
+    { 
+      property: 'og:type', 
+      content: 'website' 
+    },
+    { 
+      property: 'og:image', 
+      content: '/preventence-hero-preview.png' // <-- Update this with your actual image URL
+    },
+    // Twitter Card tags
+    {
+      name: 'twitter:card',
+      content: '/summary.png'
+    },
+    {
+      name: 'twitter:creator',
+      content: '@preventence' // <-- Optional
+    }
+  ],
+  // Add a canonical link if this component is a full page view
+  // link: [
+  //   { rel: 'canonical', href: 'https://yourdomain.com/home' }
+  // ]
+  script: [
+    { 
+      type: 'application/ld+json', 
+      children: JSON.stringify(schemaData) 
+    }
+  ]
+});
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Preventence Technology Private Limited", 
+  "alternateName": "Preventence", 
+  "url": "https://preventence.com", 
+  "logo": "/Preventence-Transparent-logo.png", 
+  "sameAs": [
+    "https://twitter.com/preventence", 
+    "https://www.linkedin.com/company/preventence-technology-private-limited/"
+  ],
+};
 
 // --- Counting Animation Logic ---
 const runCounter = (key) => {

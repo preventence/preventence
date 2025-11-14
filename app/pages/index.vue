@@ -118,10 +118,10 @@ useHead({
     },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://preventence.com/" },
-    { property: "og:image", content: "/og-banner.png" },
+    { property: "og:image", content: "/summary.png" },
 
     // Twitter
-    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:card", content: "/summary.png" },
     { name: "twitter:title", content: "Preventence — Maintenance Software" },
     {
       name: "twitter:description",
@@ -147,7 +147,7 @@ useHead({
         description:
           "Preventence is a modern maintenance management software that automates workflows, tracks assets in real time, and improves equipment reliability with intelligent scheduling and analytics.",
         url: "https://preventence.com/",
-        image: "https://preventence.com/og-banner.png",
+        image: "/og-banner.png",
         creator: {
           "@type": "Organization",
           name: "Preventence",
