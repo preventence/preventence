@@ -54,7 +54,7 @@
           <a href="/#industries" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Industries</a>
           <a href="/#roi" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">ROI Calculator</a>
           <a href="/#pricing" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Pricing</a>
-          <NuxtLink to="/#about" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">About</NuxtLink>
+          <NuxtLink to="/about" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">About</NuxtLink>
           <a href="/#blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</a>
           <a href="/#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a>
 
