@@ -136,6 +136,7 @@ useHead({
         description:
           "Complete list of Preventence capabilities including maintenance automation, asset management, checklists, dashboards, analytics and integrations.",
         url: "https://preventence.com/features",
+        logo: "https://preventence.com/og-banner.png",
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [
