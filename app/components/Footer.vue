@@ -33,7 +33,7 @@
             <li><a href="/#about" class="hover:text-[#1297E0] transition">About Us</a></li>
             <li><a href="/#blog" class="hover:text-[#1297E0] transition">Blog</a></li>
             <li><a href="/#contact" class="hover:text-[#1297E0] transition">Contact</a></li>
-            <li><a href="https://preventence-app-delta.vercel.app/" target="_blank" class="hover:text-[#1297E0] transition">Login</a></li>
+            <li><a href="https://app.preventence.com/" target="_blank" class="hover:text-[#1297E0] transition">Login</a></li>
           </ul>
         </div>
 

@@ -26,7 +26,7 @@
         
         <!-- CTA Buttons -->
         <div class="flex items-center space-x-4">
-          <NuxtLink href="https://preventence-app-delta.vercel.app/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] transition-colors font-medium">
+          <NuxtLink href="https://app.preventence.com/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] transition-colors font-medium">
             Log In
           </NuxtLink>
           <button 
@@ -59,7 +59,7 @@
           <a href="/#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a>
 
           <div class="flex flex-col space-y-2 pt-2">
-            <NuxtLink href="https://preventence-app-delta.vercel.app/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] font-medium text-left">
+            <NuxtLink href="https://app.preventence.com/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] font-medium text-left">
               Log In
             </NuxtLink>
             <button 
