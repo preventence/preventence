@@ -22,7 +22,14 @@
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import DemoModal from '~/components/DemoModal.vue'
-import { ref } from 'vue'
+import { useRetryQueue } from "~/composables/useRetryQueue";
+const { processQueue } = useRetryQueue();
 
-const openDemo = ref(false)
+import { onMounted, ref } from "vue";
+
+const openDemo = ref(false);
+
+onMounted(() => {
+  processQueue(); // auto-retry when backend wakes up
+});
 </script>

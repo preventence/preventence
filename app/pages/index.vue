@@ -68,6 +68,7 @@
       </div>
     </section> -->
 
+    <DemoModal v-model:show="openDemo" />
     <ROICalculator @openDemo="openDemo = true" />
     <!-- CTA -->
     <FooterCTA @openDemo="openDemo = true" />
@@ -89,6 +90,7 @@ import FeaturePillar from '~/components/FeaturePillar.vue'
 import Industries from '~/components/Industries.vue'
 import ROICalculator from '~/components/ROICalculator.vue'
 import FooterCTA from '~/components/FooterCTA.vue'
+import DemoModal from '~/components/DemoModal.vue'
 import { Settings, Factory, BarChart2, Cloud } from 'lucide-vue-next'
 import { ref } from 'vue'
 import { useHead } from '#imports'

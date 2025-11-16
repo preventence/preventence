@@ -83,13 +83,13 @@
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-fade-in-up"
           style="animation-delay: 0.4s"
         >
-          <button
+          <button @click="$emit('openDemo')"
             class="inline-flex items-center justify-center bg-blue-500 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-blue-500/30 active:scale-[0.98]"
           >
             Start Free Trial
             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
-          <button
+          <button @click="$emit('openDemo')"
             class="inline-flex items-center justify-center border-2 border-blue-400 text-blue-200 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-400/10 transition-all duration-300 active:scale-[0.98]"
           >
             Watch Demo

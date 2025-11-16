@@ -146,19 +146,24 @@
           equipment life.
         </p>
 
-        <NuxtLink
-          to="/#contact"
+        <button
+          @click="openDemo = true"
           class="inline-block bg-white text-[#07416B] px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-blue-50 transition"
         >
           Book a Demo
-        </NuxtLink>
+        </button>
       </div>
     </section>
+    <DemoModal v-model:show="openDemo" />
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useHead } from '#imports'
+import DemoModal from '~/components/DemoModal.vue'
+
+const openDemo = ref(false)
 
 useHead({
   title: "About Us — Preventence Maintenance Management Software",
