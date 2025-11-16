@@ -10,5 +10,5 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* equals ~80px */
+  /* scroll-padding-top: 5rem; equals ~80px */
 }
