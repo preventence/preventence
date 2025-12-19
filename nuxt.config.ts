@@ -3,9 +3,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/scripts', '@nuxt/ui',  '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
-    '@nuxtjs/google-fonts',],
+  modules: ['@nuxt/content', '@nuxt/scripts', '@nuxt/ui',  '@nuxtjs/sitemap',
+    '@nuxtjs/robots', 
+    '@nuxtjs/google-fonts', "@nuxthq/studio", "@vueuse/nuxt"],
+    //  imports: {
+    //   autoImport: true
+    // },
+  content: {
+  },
   postcss: {
      plugins: {
       '@tailwindcss/postcss': {},
@@ -33,10 +38,12 @@ export default defineNuxtConfig({
     prefetch: true,
   },
    app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: 'Preventence | Smart Preventive Maintenance Platform',
       htmlAttrs: {
         lang: 'en',
+        class: "h-full",
       },
       meta: [
         { charset: 'utf-8' },
