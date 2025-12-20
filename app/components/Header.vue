@@ -22,7 +22,7 @@
           <NuxtLink to="/about" class="text-gray-600 hover:text-[#1297E0] transition-colors">About</NuxtLink>
           <NuxtLink to="/blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</NuxtLink>
           <!-- <a href="/#blog" class="text-gray-600 hover:text-[#1297E0] transition-colors">Blog</a> -->
-          <a href="/#contact" class="text-gray-600 hover:text-[#1297E0] transition-colors">Contact</a>
+          <!-- <a href="/#contact" class="text-gray-600 hover:text-[#1297E0] transition-colors">Contact</a> -->
         </div>
         
         <!-- CTA Buttons -->
@@ -58,7 +58,7 @@
           <NuxtLink to="/about" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">About</NuxtLink>
           <NuxtLink to="/blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</NuxtLink>
           <!-- <a href="/#blog" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Blog</a> -->
-          <a href="/#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a>
+          <!-- <a href="/#contact" class="text-gray-600 hover:text-[#1297E0]" @click="closeMobileMenu">Contact</a> -->
 
           <div class="flex flex-col space-y-2 pt-2">
             <NuxtLink href="https://app.preventence.com/" target="_blank" class="text-[#1297E0] hover:text-[#07416B] font-medium text-left">

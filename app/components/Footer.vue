@@ -32,7 +32,7 @@
           <ul class="space-y-2 text-sm">
             <li><NuxtLink to="/about" class="hover:text-[#1297E0] transition">About Us</NuxtLink></li>
             <li><NuxtLink to="/blog" class="text-gray-600 hover:text-[#1297E0]">Blog</NuxtLink></li>
-            <li><a href="/#contact" class="hover:text-[#1297E0] transition">Contact</a></li>
+            <!-- <li><a href="/#contact" class="hover:text-[#1297E0] transition">Contact</a></li> -->
             <li><a href="https://app.preventence.com/" target="_blank" class="hover:text-[#1297E0] transition">Login</a></li>
           </ul>
         </div>
