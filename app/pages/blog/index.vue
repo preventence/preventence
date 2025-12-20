@@ -101,19 +101,10 @@
 
 <script setup lang="js">
 import { ref, computed } from 'vue'
-// import { calculateReadingTime } from '~/utils/readingTime'
 
 const selectedTag = ref('All')
 
-// const { data: blogs } = await useAsyncData('blogs', () =>
-//   queryCollection('blog')
-//     .path('/blog')
-//     .sort({ date: -1 })
-//     .all()
-// )
-
 const { data: blogs } = await useAsyncData('blogs', () =>
-  // Use 'blog' (the name of your collection)
   queryCollection('blog')
     .all()
 )

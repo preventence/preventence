@@ -12,16 +12,83 @@ const { data: doc } = await useAsyncData(`content-${route.path}`, () => {
     .first()
 })
 
-/* ================= SEO ================= */
-useHead(() => {
-  if (!doc.value) return {}
-  return {
-    title: `${doc.value.title} | Preventence Blog`,
-    meta: [
-      { name: 'description', content: doc.value.description || '' },
-      { name: 'author', content: doc.value.author || 'Preventence Team' }
-    ]
-  }
+useSeoMeta({
+  title: () => `${doc.value?.title} | Preventence`,
+  description: () => doc.value?.description,
+  author: () => doc.value?.author || 'Preventence Team',
+  ogTitle: () => doc.value?.title,
+  ogDescription: () => doc.value?.description,
+  ogImage: () => doc.value?.cover || '/Preventence-Transparent-logo.png',
+  ogUrl: () => `https://preventence.com${route.path}`,
+  ogType: 'article',
+  ogSiteName: 'Preventence',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => doc.value?.title,
+  twitterDescription: () => doc.value?.description,
+  twitterImage: () => doc.value?.cover || '/Preventence-Transparent-logo.png',
+  twitterCreator: '@PreventenceHQ',
+  articlePublishedTime: () => doc.value?.date,
+  articleModifiedTime: () => doc.value?.updatedAt || doc.value?.date,
+  articleTag: () => doc.value?.tags || [],
+  articleSection: 'Industrial Maintenance',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+})
+
+// useHead(() => {
+//   if (!doc.value) return {}
+//   return {
+//     title: `${doc.value.title} | Preventence Blog`,
+//     meta: [
+//       { name: 'description', content: doc.value.description || '' },
+//       { name: 'author', content: doc.value.author || 'Preventence Team' }
+//     ]
+//   }
+// })
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "TechArticle", // Better than 'BlogPosting' for industrial content
+        "headline": doc.value?.title,
+        "description": doc.value?.description,
+        "image": [doc.value?.cover || 'https://preventence.com/Preventence-Transparent-logo.png'],
+        "datePublished": doc.value?.date,
+        "dateModified": doc.value?.updatedAt || doc.value?.date,
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "What are the benefits of preventive maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preventive maintenance reduces unplanned downtime, extends equipment lifespan, and lowers overall maintenance costs."
+          }
+        }, {
+          "@type": "Question",
+          "name": "What is CMMS-based preventive maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CMMS digitizes maintenance by automating schedules, tracking work orders, and monitoring asset health in real-time."
+          }
+        }]
+        "author": {
+          "@type": "Organization",
+          "name": "Preventence Technology",
+          "url": "https://preventence.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Preventence",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://preventence.com/Preventence-Transparent-logo.png"
+          }
+        }
+      })
+    }
+  ]
 })
 
 /* ================= UTILS ================= */
