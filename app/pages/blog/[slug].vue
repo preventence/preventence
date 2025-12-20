@@ -24,14 +24,6 @@ useHead(() => {
   }
 })
 
-/* ================= READING TIME ================= */
-const readingTime = computed(() => {
-  if (!doc.value?.body) return 0
-  const text = JSON.stringify(doc.value.body)
-  const words = text.split(/\s+/g).length
-  return Math.ceil(words / 200)
-})
-
 /* ================= UTILS ================= */
 function formatDate(date) {
   if (!date) return ''
@@ -96,11 +88,11 @@ onMounted(() => {
           <div class="flex items-center gap-2">
             <span class="font-medium text-gray-900">By {{ doc.author || 'Preventence Team' }}</span>
           </div>
-          <span v-if="doc.date" class="flex items-center gap-1">
-            {{ formatDate(doc.date) }}
+          <span v-if="doc?.meta?.date" class="flex items-center gap-1">
+            {{ formatDate(doc?.meta?.date) }}
           </span>
-          <span v-if="readingTime" class="bg-blue-50 text-[#1297E0] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-            {{ readingTime }} min read
+          <span v-if="doc?.meta?.readingtime" class="bg-blue-50 text-[#1297E0] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            {{ doc?.meta?.readingtime || 2 }} min read
           </span>
         </div>
       </header>

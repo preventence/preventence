@@ -5,6 +5,7 @@ date: "2025-12-15"
 tags: ["What is Preventive Maintenance", "CMMS", "Reliability"]
 slug: preventive-maintenance-guide
 cover: "/blog/pm-cover.png"
+readingtime: "4"
 keywords:
   - preventive maintenance
   - CMMS preventive maintenance
