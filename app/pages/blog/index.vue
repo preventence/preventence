@@ -64,9 +64,9 @@
               
               <!-- Metadata Row -->
               <p class="text-sm text-slate-500 mb-2">
-                {{ formatDate(blog.date) }} ·
+                {{ formatDate(blog.meta.date) }} ·
                 <span class="font-medium text-slate-700">
-                  {{calculateReadingTime(blog.body?.children?.map(c => c.value).join(' ') || '0')}} min read
+                  {{ blog.meta.readingtime }} min read
                 </span>
               </p>
 
@@ -101,7 +101,7 @@
 
 <script setup lang="js">
 import { ref, computed } from 'vue'
-import { calculateReadingTime } from '~/utils/readingTime'
+// import { calculateReadingTime } from '~/utils/readingTime'
 
 const selectedTag = ref('All')
 
