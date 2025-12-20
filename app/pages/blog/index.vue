@@ -120,16 +120,21 @@ const { data: blogs } = await useAsyncData('blogs', () =>
 
 const tags = computed(() => {
   if (!blogs.value) return []
-  const allTags = blogs.value.flatMap(b => b.meta.tags || [])
+  // const allTags = blogs.value.flatMap(b => b.meta.tags || [])
+  const allTags = blogs.value.flatMap(b => b.tags || b.meta?.tags || [])
   return ['All', ...new Set(allTags)]
 })
 
 const filteredBlogs = computed(() => {
   if (!blogs.value) return []
   if (selectedTag.value === 'All') return blogs.value
-  return blogs.value.filter(blog =>
-    blog.meta.tags?.includes(selectedTag.value)
-  )
+  // return blogs.value.filter(blog =>
+  //   blog.meta.tags?.includes(selectedTag.value)
+  // )
+  return blogs.value.filter(blog => {
+     const blogTags = blog.tags || blog.meta?.tags || []
+     return blogTags.includes(selectedTag.value)
+  })
 })
 
 function formatDate(date) {

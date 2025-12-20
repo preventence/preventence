@@ -5,7 +5,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/content', '@nuxt/scripts', '@nuxt/ui',  '@nuxtjs/sitemap',
     '@nuxtjs/robots', 
-    '@nuxtjs/google-fonts', "@nuxthq/studio", "@vueuse/nuxt"],
+    '@nuxtjs/google-fonts', 
+    // "@nuxthq/studio", 
+    "@vueuse/nuxt"],
     //  imports: {
     //   autoImport: true
     // },
