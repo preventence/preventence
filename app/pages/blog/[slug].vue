@@ -35,16 +35,6 @@ useSeoMeta({
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
 })
 
-// useHead(() => {
-//   if (!doc.value) return {}
-//   return {
-//     title: `${doc.value.title} | Preventence Blog`,
-//     meta: [
-//       { name: 'description', content: doc.value.description || '' },
-//       { name: 'author', content: doc.value.author || 'Preventence Team' }
-//     ]
-//   }
-// })
 
 useHead({
   script: [
@@ -72,7 +62,7 @@ useHead({
             "@type": "Answer",
             "text": "A CMMS digitizes maintenance by automating schedules, tracking work orders, and monitoring asset health in real-time."
           }
-        }]
+        }],
         "author": {
           "@type": "Organization",
           "name": "Preventence Technology",
@@ -91,7 +81,6 @@ useHead({
   ]
 })
 
-/* ================= UTILS ================= */
 function formatDate(date) {
   if (!date) return ''
   return new Date(date).toLocaleDateString('en-IN', {
