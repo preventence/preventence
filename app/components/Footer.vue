@@ -72,7 +72,7 @@
 
       <!-- Bottom Footer -->
       <div class="flex flex-col md:flex-row justify-between items-center text-sm text-[#07416B]/80">
-        <p>© 2025 Preventence. All rights reserved.</p>
+        <p>© {{ currentYear }} Preventence. All rights reserved.</p>
         <div class="flex gap-6 mt-4 md:mt-0">
           <!-- <a href="/privacy" class="hover:text-[#1297E0]">Privacy Policy</a> -->
           <a href="/#" class="hover:text-[#1297E0]">Privacy Policy</a>
@@ -83,3 +83,7 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+const currentYear = new Date().getFullYear()
+</script>

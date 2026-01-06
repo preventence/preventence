@@ -1,7 +1,7 @@
 ---
-title: "What Is Preventive Maintenance? A Complete Guide for Modern Industries (2025)"
+title: "What Is Preventive Maintenance? A Complete Guide for Modern Industries (2026)"
 description: "Learn what preventive maintenance is, why it matters, its benefits, and how CMMS-based preventive maintenance by Preventence Technology helps industries reduce downtime and costs."
-date: "2025-12-15"
+date: "2026-01-01"
 tags: ["What is Preventive Maintenance", "CMMS", "Reliability"]
 slug: preventive-maintenance-guide
 cover: "/blog/pm-cover.png"
@@ -14,7 +14,7 @@ keywords:
   - preventive maintenance software
 ---
 
-# What Is Preventive Maintenance? A Complete Guide for Modern Industries (2025)
+# What Is Preventive Maintenance? A Complete Guide for Modern Industries (2026)
 
 In today’s competitive industrial environment, **unplanned downtime is one of the biggest threats to productivity, profitability, and operational stability**.
 
