@@ -211,13 +211,13 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "Preventence",
+        name: "Preventence Technology Private Limited",
         url: "https://preventence.com/about",
         logo: "https://preventence.com/og-banner.png",
         description:
           "Preventence is a modern maintenance management software helping industrial teams reduce downtime, automate workflows, and improve asset reliability.",
         sameAs: [
-          "https://www.linkedin.com/company/preventence",
+          "https://in.linkedin.com/company/preventence-technology-private-limited",
           "https://twitter.com/preventence"
         ]
       })

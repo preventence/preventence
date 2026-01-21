@@ -143,7 +143,7 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        name: "Preventence",
+        name: "Preventence Technology Private Limited",
         applicationCategory: "Industrial Maintenance Software",
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
         description:

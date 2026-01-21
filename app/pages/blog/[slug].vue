@@ -65,12 +65,12 @@ useHead({
         }],
         "author": {
           "@type": "Organization",
-          "name": "Preventence Technology",
+          "name": "Preventence Technology Private Limited",
           "url": "https://preventence.com"
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Preventence",
+          "name": "Preventence Technology Private Limited",
           "logo": {
             "@type": "ImageObject",
             "url": "https://preventence.com/Preventence-Transparent-logo.png"

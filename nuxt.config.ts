@@ -8,9 +8,6 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts', 
     // "@nuxthq/studio", 
     "@vueuse/nuxt"],
-    //  imports: {
-    //   autoImport: true
-    // },
   content: {
   },
   postcss: {
@@ -42,7 +39,7 @@ export default defineNuxtConfig({
    app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: 'Preventence | Smart Preventive Maintenance Platform',
+      title: 'Preventence Technology Pvt Ltd | Smart Preventive Maintenance Platform',
       htmlAttrs: {
         lang: 'en',
         class: "h-full",
@@ -53,11 +50,11 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Preventence is an intelligent preventive maintenance platform that reduces equipment downtime, improves asset reliability, and increases productivity across industries.',
+            'Preventence Technology Private Limited (Preventence) is an intelligent preventive maintenance platform that reduces equipment downtime, improves asset reliability, and increases productivity across industries.',
         },
         // Open Graph (Social Sharing)
-        { property: 'og:title', content: 'Preventence | Intelligent Preventive Maintenance Platform' },
-        { property: 'og:description', content: 'Reduce downtime, automate maintenance, and improve asset life with Preventence.' },
+        { property: 'og:title', content: 'Preventence Technology Pvt Ltd | Intelligent Preventive Maintenance Platform' },
+        { property: 'og:description', content: 'Preventence Technology Pvt Ltd | Reduce downtime, automate maintenance, and improve asset life with Preventence.' },
         { property: 'og:image', content: '/Preventence-Transparent-logo.png' },
         { property: 'og:url', content: 'https://preventence.com' },
         { property: 'og:type', content: 'website' },
