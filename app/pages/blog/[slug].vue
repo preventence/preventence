@@ -211,6 +211,50 @@ onMounted(() => {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+:deep(.prose table) {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0; /* gray-200 */
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+:deep(.prose thead) {
+  background-color: #f8fafc; /* gray-50 */
+  border-bottom: 2px solid #e2e8f0;
+}
+
+:deep(.prose th) {
+  color: #07416B; /* Your Brand Dark Blue */
+  padding: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+:deep(.prose td) {
+  padding: 1rem;
+  vertical-align: middle;
+  border-top: 1px solid #f1f5f9;
+  color: #475569; /* gray-600 */
+}
+
+/* Zebra Striping */
+:deep(.prose tbody tr:nth-child(even)) {
+  background-color: #fcfcfd;
+}
+
+/* Mobile Responsiveness Wrapper */
+:deep(.prose .table-wrapper) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.75rem;
+}
+
 /* Ensure smooth scrolling works even with browser defaults */
 html {
   scroll-behavior: smooth;
